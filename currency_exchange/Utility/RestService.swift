@@ -11,6 +11,8 @@ final class RestService {
     
     static let shared = RestService()
     
+    static let basicURLString: String = "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios"
+    
     private init() {
         
     }

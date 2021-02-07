@@ -14,6 +14,13 @@
 		D80CFD3925D04E2000FC0579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80CFD3825D04E2000FC0579 /* Assets.xcassets */; };
 		D80CFD3C25D04E2000FC0579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80CFD3A25D04E2000FC0579 /* LaunchScreen.storyboard */; };
 		D80CFD4625D0524D00FC0579 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CFD4525D0524D00FC0579 /* RestService.swift */; };
+		D80CFD4C25D0587C00FC0579 /* CurrencyPairCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CFD4A25D0587C00FC0579 /* CurrencyPairCell.swift */; };
+		D80CFD4D25D0587C00FC0579 /* CurrencyPairCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80CFD4B25D0587C00FC0579 /* CurrencyPairCell.xib */; };
+		D80CFD5225D0596400FC0579 /* CurrencyPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CFD5025D0596400FC0579 /* CurrencyPickerCell.swift */; };
+		D80CFD5325D0596400FC0579 /* CurrencyPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80CFD5125D0596400FC0579 /* CurrencyPickerCell.xib */; };
+		D80CFD5625D05A2A00FC0579 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CFD5525D05A2A00FC0579 /* TableHeader.swift */; };
+		D80CFD5925D05A3E00FC0579 /* UITableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80CFD5825D05A3E00FC0579 /* UITableViewHeaderFooterView.xib */; };
+		D80CFD5D25D0642900FC0579 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CFD5C25D0642900FC0579 /* CurrencyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		D80CFD3B25D04E2000FC0579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D80CFD3D25D04E2000FC0579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D80CFD4525D0524D00FC0579 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		D80CFD4A25D0587C00FC0579 /* CurrencyPairCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPairCell.swift; sourceTree = "<group>"; };
+		D80CFD4B25D0587C00FC0579 /* CurrencyPairCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyPairCell.xib; sourceTree = "<group>"; };
+		D80CFD5025D0596400FC0579 /* CurrencyPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerCell.swift; sourceTree = "<group>"; };
+		D80CFD5125D0596400FC0579 /* CurrencyPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyPickerCell.xib; sourceTree = "<group>"; };
+		D80CFD5525D05A2A00FC0579 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
+		D80CFD5825D05A3E00FC0579 /* UITableViewHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		D80CFD5C25D0642900FC0579 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,8 @@
 		D80CFD2E25D04E1E00FC0579 /* currency_exchange */ = {
 			isa = PBXGroup;
 			children = (
+				D80CFD5B25D0641400FC0579 /* Model */,
+				D80CFD4825D0585500FC0579 /* View */,
 				D80CFD4425D0523700FC0579 /* Utility */,
 				D80CFD2F25D04E1E00FC0579 /* AppDelegate.swift */,
 				D80CFD3125D04E1E00FC0579 /* SceneDelegate.swift */,
@@ -76,6 +92,35 @@
 				D80CFD4525D0524D00FC0579 /* RestService.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		D80CFD4825D0585500FC0579 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D80CFD4925D0585D00FC0579 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D80CFD4925D0585D00FC0579 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D80CFD4A25D0587C00FC0579 /* CurrencyPairCell.swift */,
+				D80CFD4B25D0587C00FC0579 /* CurrencyPairCell.xib */,
+				D80CFD5025D0596400FC0579 /* CurrencyPickerCell.swift */,
+				D80CFD5125D0596400FC0579 /* CurrencyPickerCell.xib */,
+				D80CFD5525D05A2A00FC0579 /* TableHeader.swift */,
+				D80CFD5825D05A3E00FC0579 /* UITableViewHeaderFooterView.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D80CFD5B25D0641400FC0579 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D80CFD5C25D0642900FC0579 /* CurrencyModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +180,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80CFD4D25D0587C00FC0579 /* CurrencyPairCell.xib in Resources */,
 				D80CFD3C25D04E2000FC0579 /* LaunchScreen.storyboard in Resources */,
 				D80CFD3925D04E2000FC0579 /* Assets.xcassets in Resources */,
+				D80CFD5325D0596400FC0579 /* CurrencyPickerCell.xib in Resources */,
+				D80CFD5925D05A3E00FC0579 /* UITableViewHeaderFooterView.xib in Resources */,
 				D80CFD3725D04E1E00FC0579 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,8 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80CFD5225D0596400FC0579 /* CurrencyPickerCell.swift in Sources */,
 				D80CFD3425D04E1E00FC0579 /* ViewController.swift in Sources */,
+				D80CFD5D25D0642900FC0579 /* CurrencyModel.swift in Sources */,
+				D80CFD5625D05A2A00FC0579 /* TableHeader.swift in Sources */,
 				D80CFD3025D04E1E00FC0579 /* AppDelegate.swift in Sources */,
+				D80CFD4C25D0587C00FC0579 /* CurrencyPairCell.swift in Sources */,
 				D80CFD3225D04E1E00FC0579 /* SceneDelegate.swift in Sources */,
 				D80CFD4625D0524D00FC0579 /* RestService.swift in Sources */,
 			);
