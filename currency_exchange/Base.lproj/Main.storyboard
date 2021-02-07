@@ -1,24 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="currency_exchange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPo-dP-5XR">
+                                <rect key="frame" x="62" y="312.5" width="290" height="271"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oj-tC-KAg">
+                                        <rect key="frame" x="122.5" y="51" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="xdC-DD-tlj"/>
+                                            <constraint firstAttribute="height" constant="45" id="yd7-42-Xu2"/>
+                                        </constraints>
+                                        <state key="normal" image="addButon_icom"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Currency paid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji7-Ww-T9o">
+                                        <rect key="frame" x="0.0" y="123" width="290" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="jcx-0h-fah"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="AccentColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a currency pair tp complete their live rates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB7-qr-dQZ">
+                                        <rect key="frame" x="29" y="172" width="232" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2Oj-tC-KAg" firstAttribute="top" secondItem="QPo-dP-5XR" secondAttribute="top" constant="51" id="1sI-Pe-t30"/>
+                                    <constraint firstItem="rB7-qr-dQZ" firstAttribute="width" secondItem="QPo-dP-5XR" secondAttribute="width" multiplier="0.8" id="Hdk-wu-d58"/>
+                                    <constraint firstItem="2Oj-tC-KAg" firstAttribute="centerX" secondItem="QPo-dP-5XR" secondAttribute="centerX" id="SId-lE-m3x"/>
+                                    <constraint firstItem="rB7-qr-dQZ" firstAttribute="top" secondItem="Ji7-Ww-T9o" secondAttribute="bottom" constant="28" id="X4k-P2-yed"/>
+                                    <constraint firstAttribute="bottom" secondItem="rB7-qr-dQZ" secondAttribute="bottom" constant="54" id="ZU5-VY-AHV"/>
+                                    <constraint firstItem="Ji7-Ww-T9o" firstAttribute="top" secondItem="2Oj-tC-KAg" secondAttribute="bottom" constant="27" id="hBt-PE-1wE"/>
+                                    <constraint firstItem="Ji7-Ww-T9o" firstAttribute="width" secondItem="QPo-dP-5XR" secondAttribute="width" id="pQH-bH-8YT"/>
+                                    <constraint firstItem="Ji7-Ww-T9o" firstAttribute="centerX" secondItem="QPo-dP-5XR" secondAttribute="centerX" id="rlM-es-oss"/>
+                                    <constraint firstItem="rB7-qr-dQZ" firstAttribute="centerX" secondItem="QPo-dP-5XR" secondAttribute="centerX" id="vSp-C6-qE1"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BPK-Ek-GZ7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QPo-dP-5XR" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.302455" id="6vd-UQ-rNw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BPK-Ek-GZ7" secondAttribute="trailing" id="7Ta-J7-Boq"/>
+                            <constraint firstItem="QPo-dP-5XR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AuR-Bg-ULj"/>
+                            <constraint firstItem="QPo-dP-5XR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EeC-Ol-oaH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BPK-Ek-GZ7" secondAttribute="bottom" id="GW2-WW-gbe"/>
+                            <constraint firstItem="QPo-dP-5XR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="O9e-5t-ab9"/>
+                            <constraint firstItem="QPo-dP-5XR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a2x-8W-nYQ"/>
+                            <constraint firstItem="BPK-Ek-GZ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eb3-ir-PSy"/>
+                            <constraint firstItem="BPK-Ek-GZ7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="quu-g9-ogk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emptyView" destination="QPo-dP-5XR" id="77s-6i-Yzc"/>
+                        <outlet property="tableView" destination="BPK-Ek-GZ7" id="FLd-Ep-iCc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addButon_icom" width="40" height="40"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
