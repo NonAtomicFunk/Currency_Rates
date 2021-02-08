@@ -13,8 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addPairButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
-//    public var preSelectedCurrency: Generic of tuples
-    public var preSelectedCurrency: [String] = []
+    public var preSelectedCurrency: [String] = [] //todo Generic of tuples var preSelectedCurrency: [(leftCrnc: String, rightCrnc: String)] = []
     
     fileprivate var dataModels: [CurrencyModel] = [] {
         didSet {
@@ -29,7 +28,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(preSelectedCurrency)
+        //reset table, goto rest
     }
 
     fileprivate func addCurrency(_ currencyAdded: String) {
