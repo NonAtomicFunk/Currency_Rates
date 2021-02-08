@@ -36,7 +36,6 @@ class NavController: UINavigationController {
             
         } else if currencyPair.count == 2 {
 
-//            self.popToViewController(ViewController.self)
             self.popToViewController(ViewController.self, pair: currencyPair)
         }
     }
@@ -44,15 +43,12 @@ class NavController: UINavigationController {
 
 extension UINavigationController {
     
-    
     func popToViewController(_ ofClass: AnyClass, pair: [String], animated: Bool = true) {
-        
-      if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
-        if let viewControlelr = vc as? ViewController {
-
-            viewControlelr.preSelectedCurrency = pair
-            popToViewController(viewControlelr, animated: animated)
+        if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+            if let viewControlelr = vc as? ViewController {
+                viewControlelr.preSelectedCurrency = pair
+                popToViewController(viewControlelr, animated: animated)
+            }
         }
-      }
     }
-  }
+}
