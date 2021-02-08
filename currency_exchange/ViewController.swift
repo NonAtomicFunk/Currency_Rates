@@ -10,14 +10,26 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var emptyView: UIView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addPairButton: UIButton!
     
-    fileprivate var dataModels: [CurrencyModel] = []
+    @IBOutlet weak var tableView: UITableView!
+//    public var preSelectedCurrency: Generic of tuples
+    public var preSelectedCurrency: [String] = []
+    
+    fileprivate var dataModels: [CurrencyModel] = [] {
+        didSet {
+            self.shouldHideTable()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTable()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(preSelectedCurrency)
     }
 
     fileprivate func addCurrency(_ currencyAdded: String) {
@@ -30,7 +42,35 @@ class ViewController: UIViewController {
     
     fileprivate func setupView() {
         self.title = "Rates & converter"
+        self.addPairButton.addTarget(self,
+                                     action: #selector(self.presentPickerController),
+                                     for: .touchUpInside)
     }
+    
+    fileprivate func shouldHideTable() {
+        if self.dataModels.isEmpty {
+            self.tableView.isHidden = true
+            self.tableView.isUserInteractionEnabled = false
+            
+            self.emptyView.isHidden = false
+            self.emptyView.isUserInteractionEnabled = true
+            
+        } else {
+            self.tableView.isHidden = false
+            self.tableView.isUserInteractionEnabled = true
+            
+            self.emptyView.isHidden = true
+            self.emptyView.isUserInteractionEnabled = false
+        }
+    }
+    
+    @objc func presentPickerController() {
+        guard let rootNav = self.navigationController as? NavController else {
+            return
+        }
+        rootNav.presentPickerController()
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -38,6 +78,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     fileprivate func setupTable() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        
+        self.shouldHideTable()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -12,31 +12,48 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="62" id="KGk-i7-Jjw" customClass="CurrencyPickerCell" customModule="currency_exchange" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="321" height="62"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="321" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twD-Uq-p6b">
-                        <rect key="frame" x="6" y="7" width="62" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="twD-Uq-p6b">
+                        <rect key="frame" x="16" y="16" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="5u8-n4-DqF"/>
+                            <constraint firstAttribute="height" constant="24" id="xQu-dW-4tt"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK7-oY-KVh">
-                        <rect key="frame" x="87" y="19" width="116" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK7-oY-KVh">
+                        <rect key="frame" x="87" y="22" width="53" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.55294117647058827" green="0.58384919170000005" blue="0.61569195990000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWR-tU-oBh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWR-tU-oBh">
                         <rect key="frame" x="185" y="19" width="116" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="xK7-oY-KVh" firstAttribute="centerY" secondItem="twD-Uq-p6b" secondAttribute="centerY" id="9Gw-hA-BWp"/>
+                    <constraint firstItem="twD-Uq-p6b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Bgg-Cb-FLu"/>
+                    <constraint firstItem="twD-Uq-p6b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="PpQ-X7-n8B"/>
+                    <constraint firstItem="xK7-oY-KVh" firstAttribute="leading" secondItem="twD-Uq-p6b" secondAttribute="trailing" constant="16" id="VY7-eo-IOS"/>
+                    <constraint firstItem="xK7-oY-KVh" firstAttribute="height" secondItem="twD-Uq-p6b" secondAttribute="height" multiplier="0.875" id="YfY-al-kGg"/>
+                    <constraint firstItem="iWR-tU-oBh" firstAttribute="height" secondItem="xK7-oY-KVh" secondAttribute="height" id="b3v-tq-5AU"/>
+                    <constraint firstItem="iWR-tU-oBh" firstAttribute="leading" secondItem="xK7-oY-KVh" secondAttribute="trailing" constant="24" id="don-R0-PqQ"/>
+                    <constraint firstAttribute="bottom" secondItem="twD-Uq-p6b" secondAttribute="bottom" constant="16" id="f9p-q4-hiU"/>
+                    <constraint firstItem="iWR-tU-oBh" firstAttribute="centerY" secondItem="xK7-oY-KVh" secondAttribute="centerY" id="sLh-G0-gQ0"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="currencyImageView" destination="twD-Uq-p6b" id="PkZ-ui-lGq"/>
+                <outlet property="currencyIndexLabel" destination="xK7-oY-KVh" id="dYK-gJ-q2x"/>
+                <outlet property="currencyNameLabel" destination="iWR-tU-oBh" id="wKh-ct-IWB"/>
+            </connections>
             <point key="canvasLocation" x="16.666666666666668" y="132.58928571428572"/>
         </tableViewCell>
     </objects>

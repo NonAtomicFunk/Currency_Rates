@@ -21,6 +21,9 @@
 		D80CFD5625D05A2A00FC0579 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CFD5525D05A2A00FC0579 /* TableHeader.swift */; };
 		D80CFD5925D05A3E00FC0579 /* UITableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80CFD5825D05A3E00FC0579 /* UITableViewHeaderFooterView.xib */; };
 		D80CFD5D25D0642900FC0579 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CFD5C25D0642900FC0579 /* CurrencyModel.swift */; };
+		D887483425D1D05600055A37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887483325D1D05600055A37 /* Constants.swift */; };
+		D887483725D1D2A000055A37 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887483625D1D2A000055A37 /* NavController.swift */; };
+		D887483A25D1D60000055A37 /* CurrencyPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887483925D1D60000055A37 /* CurrencyPickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		D80CFD5525D05A2A00FC0579 /* TableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
 		D80CFD5825D05A3E00FC0579 /* UITableViewHeaderFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		D80CFD5C25D0642900FC0579 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		D887483325D1D05600055A37 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D887483625D1D2A000055A37 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		D887483925D1D60000055A37 /* CurrencyPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				D80CFD4525D0524D00FC0579 /* RestService.swift */,
+				D887483325D1D05600055A37 /* Constants.swift */,
+				D887483625D1D2A000055A37 /* NavController.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -98,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D80CFD4925D0585D00FC0579 /* Cell */,
+				D887483925D1D60000055A37 /* CurrencyPickerController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,9 +210,12 @@
 				D80CFD5D25D0642900FC0579 /* CurrencyModel.swift in Sources */,
 				D80CFD5625D05A2A00FC0579 /* TableHeader.swift in Sources */,
 				D80CFD3025D04E1E00FC0579 /* AppDelegate.swift in Sources */,
+				D887483725D1D2A000055A37 /* NavController.swift in Sources */,
 				D80CFD4C25D0587C00FC0579 /* CurrencyPairCell.swift in Sources */,
 				D80CFD3225D04E1E00FC0579 /* SceneDelegate.swift in Sources */,
 				D80CFD4625D0524D00FC0579 /* RestService.swift in Sources */,
+				D887483425D1D05600055A37 /* Constants.swift in Sources */,
+				D887483A25D1D60000055A37 /* CurrencyPickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,10 @@ import UIKit
 
 class CurrencyPickerCell: UITableViewCell {
 
+    @IBOutlet weak var currencyImageView: UIImageView!
+    @IBOutlet weak var currencyIndexLabel: UILabel!
+    @IBOutlet weak var currencyNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
