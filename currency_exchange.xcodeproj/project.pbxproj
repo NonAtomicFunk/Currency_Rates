@@ -27,6 +27,7 @@
 		D8C4ED7A25D2954500371628 /* SelectedCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4ED7925D2954500371628 /* SelectedCurrency.swift */; };
 		D8C4ED7F25D2B21D00371628 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4ED7E25D2B21D00371628 /* String+Extensions.swift */; };
 		D8C4ED8625D2B36000371628 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4ED8525D2B36000371628 /* UINavigationController+Extensions.swift */; };
+		D8C4ED8A25D2EFBF00371628 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4ED8925D2EFBF00371628 /* CountryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D8C4ED7925D2954500371628 /* SelectedCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCurrency.swift; sourceTree = "<group>"; };
 		D8C4ED7E25D2B21D00371628 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D8C4ED8525D2B36000371628 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
+		D8C4ED8925D2EFBF00371628 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				D80CFD5C25D0642900FC0579 /* CurrencyModel.swift */,
 				D8C4ED7925D2954500371628 /* SelectedCurrency.swift */,
+				D8C4ED8925D2EFBF00371628 /* CountryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				D887483425D1D05600055A37 /* Constants.swift in Sources */,
 				D887483A25D1D60000055A37 /* CurrencyPickerController.swift in Sources */,
 				D8C4ED8625D2B36000371628 /* UINavigationController+Extensions.swift in Sources */,
+				D8C4ED8A25D2EFBF00371628 /* CountryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

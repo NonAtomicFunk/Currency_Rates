@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setupTable()
     }
@@ -59,7 +60,8 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupView() {
-        self.title = "Rates & converter"
+        self.title = Constants.shared.title
+        
         self.addPairButton.addTarget(self,
                                      action: #selector(self.presentPickerController),
                                      for: .touchUpInside)

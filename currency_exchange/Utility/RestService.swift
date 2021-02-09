@@ -25,7 +25,7 @@ final class RestService {
     func getRates(_ selectedPairs: [SelectedCurrency],
                   completion: @escaping QueryResult) {
         
-//        self.dataTask?.cancel()
+        self.dataTask?.cancel()
         var urlString = Constants.basicURLString
         
 //        for item in selectedPairs {
@@ -51,42 +51,22 @@ final class RestService {
             self?.errorMessage = ""
             
             defer {
-              self?.dataTask = nil
+                self?.dataTask = nil
             }
             
             if let error = error {
                 self?.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
             } else if
-              let data = data,
-              let response = response as? HTTPURLResponse,
-              response.statusCode == 200 {
+                let data = data,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
               
-              self?.decodeResults(data)
-              
-              // 6
-              DispatchQueue.main.async {
-                completion(self?.decodedData, self?.errorMessage ?? "")
-              }
+                self?.decodeResults(data)
+                
+                DispatchQueue.main.async {
+                    completion(self?.decodedData, self?.errorMessage ?? "")
+                }
             }
-
-//            if let data = data {
-//                do {
-//                    print(response, "???")
-////                    let datasourceDictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: Float]
-////
-////                    print(response, data, datasourceDictionary)
-////
-////                    let model = CurrencyModel(lefTitle: "",
-////                                              rightTitle: "",
-////                                              rightAmmount: "")
-//                } catch {
-//                    print("ERROR: ", error)
-//                }
-//            }
-//
-//            if error != nil {
-//                print("Error: ", error)
-//            }
         }
         fetchTask.resume()
     }
@@ -102,8 +82,8 @@ final class RestService {
             
             
         } catch let parseError as NSError {
-          errorMessage += "JSONSerialization error: \(parseError.localizedDescription)\n"
-          return
+            errorMessage += "JSONSerialization error: \(parseError.localizedDescription)\n"
+            return
         }
         
         guard let dataArray = decodedDict else {
@@ -117,10 +97,10 @@ final class RestService {
             let model = CurrencyModel(lefTitle: name[0..<3],
                                       rightTitle: name[3..<6],
                                       rightAmmount: String(describing: amount))
+            self.decodedData.append(model)
             print(model)
         }
         
         print(dataArray, "******")
-
     }
 }

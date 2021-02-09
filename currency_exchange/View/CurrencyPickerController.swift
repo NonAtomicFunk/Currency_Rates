@@ -10,12 +10,15 @@ import UIKit
 class CurrencyPickerController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    var currencyArray: [String] = []
+//    var currencyArray: [String] = []
+    var currencyArray: [CountryModel] = []
     public var selectedCurrency: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.currencyArray = Constants.shared.countryArray
+        
         self.setupView()
         self.setuptable()
     }
@@ -26,7 +29,8 @@ class CurrencyPickerController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.separatorColor = .clear
         
-        self.currencyArray = Constants.currencyIndex
+//        self.currencyArray = Constants.currencyIndex
+        self.currencyArray = Constants.shared.countryArray
         
         self.tableView.register(UINib(nibName: "CurrencyPickerCell",
                                       bundle: nil),
@@ -54,8 +58,11 @@ extension CurrencyPickerController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.currencyIndexLabel.text = self.currencyArray[indexPath.row].uppercased()
-//        cell. .capitalized
+        let model = self.currencyArray[indexPath.row]
+        
+        cell.currencyIndexLabel.text = model.currencyIndex.uppercased()
+        cell.currencyNameLabel.text = model.currencyName.capitalized
+        cell.currencyImageView.image = UIImage(named: model.currencyIndex) ?? UIImage(named: "flag_placeholder")
         
         let preSelectedCurrency = self.selectedCurrency.first ?? ""
         
