@@ -10,11 +10,11 @@ import UIKit
 class CurrencyPairCell: UITableViewCell {
 
     
-    @IBOutlet weak var currencyIndex0: UILabel!
-    @IBOutlet weak var currencyName0: UILabel!
+    @IBOutlet weak var leftCurrencyInfo: UILabel!
+    @IBOutlet weak var leftCurrencyName: UILabel!
     
-    @IBOutlet weak var currencyIndex1: UILabel!
-    @IBOutlet weak var currencyName1: UILabel!
+    @IBOutlet weak var rightCurrencyInfo: UILabel!
+    @IBOutlet weak var rightCurrencyName: UILabel!
     
     
     override func awakeFromNib() {

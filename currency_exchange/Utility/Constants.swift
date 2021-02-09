@@ -21,6 +21,8 @@ class Constants {
     
     static let basicURLString: String = "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios"
     
+    public var indexToNameDictionary: [String: String] = [:]
+    
     static let currencyIndex: [String] = [
         "AUD",
         "BGN",
@@ -99,7 +101,11 @@ class Constants {
         var index = 0
         for item in Constants.currencyIndex {
             
-            let model = CountryModel(currencyIndex: item, currencyName: Constants.currencyName[index])
+            let currencyName: String = Constants.currencyName[index]
+            
+            let model = CountryModel(currencyIndex: item, currencyName: currencyName)
+            self.indexToNameDictionary[item] = currencyName
+            
             self.countryArray.append(model)
             index += 1
         }

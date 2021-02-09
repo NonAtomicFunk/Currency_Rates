@@ -28,10 +28,6 @@ final class RestService {
         self.dataTask?.cancel()
         var urlString = Constants.basicURLString
         
-//        for item in selectedPairs {
-//            let appendableString: String = item.leftCurrency+item.rightCurrency
-//            urlString.append(appendableString)
-//        }
         for (index, item) in selectedPairs.enumerated() {
             if index == 0 {
                 let appendableString: String = "?pairs="+item.leftCurrency+item.rightCurrency
@@ -42,7 +38,6 @@ final class RestService {
             }
         }
         
-        print(urlString, "!!!")
         let url: URL = URL(string: urlString)!
         let request = URLRequest(url: url)
         
@@ -74,7 +69,7 @@ final class RestService {
     fileprivate func decodeResults(_ data: Data) {
         
         var decodedDict: JSONDictionary?
-//        self.decodedData.removeAll()
+        self.decodedData.removeAll()
         
         
         do {
