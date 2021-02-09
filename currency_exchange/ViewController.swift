@@ -43,12 +43,18 @@ class ViewController: UIViewController {
             return
         }
         
-        RestService.shared.getRates(self.preSelectedCurrency/*,
-                                    completion: self.resetTable*/)
+//        RestService.shared.getRates(self.preSelectedCurrency/*,
+//                                    completion: self.resetTable*/)
+        RestService.shared.getRates(self.preSelectedCurrency) {  [weak self] results, errorMessage in
+            if let result = results {
+                self?.resetTable(result)
+            }
+        }
+        
         
     }
     
-    fileprivate func resetTable(_ data: [SelectedCurrency]) {
+    fileprivate func resetTable(_ data: [CurrencyModel]) {
         
     }
     
