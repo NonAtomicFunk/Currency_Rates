@@ -10,14 +10,11 @@ import UIKit
 class CurrencyPickerController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-//    var currencyArray: [String] = []
     var currencyArray: [CountryModel] = []
     public var selectedCurrency: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.currencyArray = Constants.shared.countryArray
         
         self.setupView()
         self.setuptable()
@@ -29,7 +26,6 @@ class CurrencyPickerController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.separatorColor = .clear
         
-//        self.currencyArray = Constants.currencyIndex
         self.currencyArray = Constants.shared.countryArray
         
         self.tableView.register(UINib(nibName: "CurrencyPickerCell",
