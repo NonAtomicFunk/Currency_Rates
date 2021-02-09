@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addPairButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
-    public var preSelectedCurrency: [String] = [] //todo Generic of tuples var preSelectedCurrency: [(leftCrnc: String, rightCrnc: String)] = []
+    public var preSelectedCurrency: [SelectedCurrency] = []
     
     fileprivate var dataModels: [CurrencyModel] = [] {
         didSet {
@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //reset table, goto rest
+        getRates()
     }
 
     fileprivate func addCurrency(_ currencyAdded: String) {
@@ -37,6 +38,18 @@ class ViewController: UIViewController {
 
     fileprivate func getRates() {
 //        let restService = RestService.shared
+        
+        guard !self.preSelectedCurrency.isEmpty else {
+            return
+        }
+        
+        RestService.shared.getRates(self.preSelectedCurrency/*,
+                                    completion: self.resetTable*/)
+        
+    }
+    
+    fileprivate func resetTable(_ data: [SelectedCurrency]) {
+        
     }
     
     fileprivate func setupView() {

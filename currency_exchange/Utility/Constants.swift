@@ -9,6 +9,8 @@ import Foundation
 
 class Constants {
     
+    static let basicURLString: String = "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios"
+    
     static let currencyIndex: [String] = [
         "AUD",
         "BGN",

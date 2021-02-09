@@ -24,6 +24,7 @@
 		D887483425D1D05600055A37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887483325D1D05600055A37 /* Constants.swift */; };
 		D887483725D1D2A000055A37 /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887483625D1D2A000055A37 /* NavController.swift */; };
 		D887483A25D1D60000055A37 /* CurrencyPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887483925D1D60000055A37 /* CurrencyPickerController.swift */; };
+		D8C4ED7A25D2954500371628 /* SelectedCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4ED7925D2954500371628 /* SelectedCurrency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		D887483325D1D05600055A37 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D887483625D1D2A000055A37 /* NavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		D887483925D1D60000055A37 /* CurrencyPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerController.swift; sourceTree = "<group>"; };
+		D8C4ED7925D2954500371628 /* SelectedCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCurrency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D80CFD5C25D0642900FC0579 /* CurrencyModel.swift */,
+				D8C4ED7925D2954500371628 /* SelectedCurrency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D80CFD5225D0596400FC0579 /* CurrencyPickerCell.swift in Sources */,
+				D8C4ED7A25D2954500371628 /* SelectedCurrency.swift in Sources */,
 				D80CFD3425D04E1E00FC0579 /* ViewController.swift in Sources */,
 				D80CFD5D25D0642900FC0579 /* CurrencyModel.swift in Sources */,
 				D80CFD5625D05A2A00FC0579 /* TableHeader.swift in Sources */,

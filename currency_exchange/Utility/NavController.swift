@@ -46,7 +46,11 @@ extension UINavigationController {
     func popToViewController(_ ofClass: AnyClass, pair: [String], animated: Bool = true) {
         if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
             if let viewControlelr = vc as? ViewController {
-                viewControlelr.preSelectedCurrency = pair
+                
+                let selectedPair = SelectedCurrency(leftCurrency: pair.first!,
+                                                    rightCurrency: pair.last!)
+                
+                viewControlelr.preSelectedCurrency.append(selectedPair)
                 popToViewController(viewControlelr, animated: animated)
             }
         }
