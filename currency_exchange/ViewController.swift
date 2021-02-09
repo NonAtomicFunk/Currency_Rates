@@ -16,20 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var headerViewButton: UIButton!
     
     @IBOutlet weak var tableView: UITableView!
-    public var preSelectedCurrency: [SelectedCurrency] = [] //{
-//        didSet {
-//            self.shouldHideTable()
-//        }
-//    }
+    
+    public var preSelectedCurrency: [SelectedCurrency] = []
     fileprivate var dataModels: [CurrencyModel] = []
-    
-//    fileprivate var dataModels: [CurrencyModel] = [] {
-//        didSet {
-//            self.shouldHideTable()
-//        }
-//    }
-    
-    //RestService
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,24 +28,11 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //reset table, goto rest
-//        getRates()
         self.hideUnhideTable()
     }
 
-    fileprivate func addCurrency(_ currencyAdded: String) {
-//        var currencyPair: [String]
-    }
 
     fileprivate func getRates() {
-//        let restService = RestService.shared
-        
-//        guard !self.preSelectedCurrency.isEmpty else {
-//            return
-//        }
-        
-//        RestService.shared.getRates(self.preSelectedCurrency/*,
-//                                    completion: self.resetTable*/)
         RestService.shared.getRates(self.preSelectedCurrency) {  [weak self] results, errorMessage in
             if let result = results {
                 self?.resetTable(result)
@@ -77,6 +53,13 @@ class ViewController: UIViewController {
         self.addPairButton.addTarget(self,
                                      action: #selector(self.presentPickerController),
                                      for: .touchUpInside)
+        
+        self.headerViewButton.addTarget(self,
+                                        action: #selector(presentPickerController),
+                                        for: .touchUpInside)
+
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.presentPickerController))
+        self.headerView.addGestureRecognizer(gesture)
     }
     
     fileprivate func hideUnhideTable() {
@@ -91,25 +74,17 @@ class ViewController: UIViewController {
         self.emptyView.isUserInteractionEnabled = self.preSelectedCurrency.isEmpty
         
         if !self.preSelectedCurrency.isEmpty {
-//            self.tableView.isHidden = true
-//            self.tableView.isUserInteractionEnabled = false
-//
-//            self.headerView.isHidden = true
-//            self.headerView.isUserInteractionEnabled = false
-//
-//            self.emptyView.isHidden = false
-//            self.emptyView.isUserInteractionEnabled = true
-            
-//        } else {
-//            self.tableView.isHidden = false
-//            self.tableView.isUserInteractionEnabled = true
-//
-//            self.emptyView.isHidden = true
-//            self.emptyView.isUserInteractionEnabled = false
             
             self.getRates()
-//            RestService.shared. todo
         }
+    }
+    
+    func getnameForInsder(_ index: String) -> String {
+        let dict = Constants.shared.indexToNameDictionary
+        
+        let curencyName = dict[index] ?? ""
+        
+        return curencyName
     }
     
     @objc func presentPickerController() {
@@ -126,13 +101,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     fileprivate func setupTable() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.estimatedRowHeight = 111.0 //56.0
+        self.tableView.estimatedRowHeight = 111.0
         self.tableView.register(UINib(nibName: "CurrencyPairCell", bundle: nil),
                                 forCellReuseIdentifier: "CurrencyPairCell")
-        
-        self.headerViewButton.addTarget(self,
-                                        action: #selector(presentPickerController),
-                                        for: .touchUpInside)
         
         self.tableView.separatorColor = .clear
     }
@@ -158,30 +129,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func getnameForInsder(_ index: String) -> String {
-        let dict = Constants.shared.indexToNameDictionary
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        let curencyName = dict[index] ?? "WAS"
-        
-        return curencyName
+        if editingStyle == .delete {
+            self.dataModels.remove(at: indexPath.row)
+            self.preSelectedCurrency.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            if self.dataModels.count == 0 {
+                self.hideUnhideTable()
+            }
+        }
     }
-    /// register Header
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//
-//        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "TableHeader") as? TableHeader else {
-//            return nil
-//        }
-//
-////        headerView.addButton.addTarget(self,
-////                                        action: #selector(self.presentPickerController),
-////                                        for: .touchUpInside)
-//
-//        return headerView
-//    }
-//
-//    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 120
-//    }
 }
-

@@ -16,6 +16,13 @@ extension UINavigationController {
                 let selectedPair = SelectedCurrency(leftCurrency: pair.first!,
                                                     rightCurrency: pair.last!)
                 
+                for item in viewControlelr.preSelectedCurrency {
+                    if item.leftCurrency == selectedPair.leftCurrency && item.rightCurrency == selectedPair.rightCurrency {
+                        popToViewController(viewControlelr, animated: animated)
+                        return
+                    }
+                }
+                
                 viewControlelr.preSelectedCurrency.append(selectedPair)
                 popToViewController(viewControlelr, animated: animated)
             }
